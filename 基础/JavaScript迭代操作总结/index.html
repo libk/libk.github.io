@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png">
+  <link rel="mask-icon" href="/images/logo-my.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="普通for循环优点：没有任何额外的函数调用栈和上下文，在大数据量的情况下，性能更好 缺点：需要额外维护变量i和迭代边界 forEach方法forEach() 方法按升序为数组中含有效值的每一项执行一次 callback 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）。 可依次向 callback 函数传入三个参数：  数组当前项的值 数组当前项的索引 数组对象本身  缺点：  只能用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript迭代操作总结">
+<meta property="og:url" content="http://libk.github.io/%E5%9F%BA%E7%A1%80/JavaScript%E8%BF%AD%E4%BB%A3%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">
+<meta property="og:site_name" content="LiBK-铁甲依然在">
+<meta property="og:description" content="普通for循环优点：没有任何额外的函数调用栈和上下文，在大数据量的情况下，性能更好 缺点：需要额外维护变量i和迭代边界 forEach方法forEach() 方法按升序为数组中含有效值的每一项执行一次 callback 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）。 可依次向 callback 函数传入三个参数：  数组当前项的值 数组当前项的索引 数组对象本身  缺点：  只能用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-30T13:22:42.000Z">
+<meta property="article:modified_time" content="2022-03-30T13:32:41.259Z">
+<meta property="article:author" content="LiBK">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://libk.github.io/%E5%9F%BA%E7%A1%80/JavaScript%E8%BF%AD%E4%BB%A3%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E5%9F%BA%E7%A1%80/JavaScript%E8%BF%AD%E4%BB%A3%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/","path":"基础/JavaScript迭代操作总结/","title":"JavaScript迭代操作总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaScript迭代操作总结 | LiBK-铁甲依然在</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LiBK-铁甲依然在</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E9%80%9Afor%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">普通for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">forEach方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for%E2%80%A6in"><span class="nav-number">3.</span> <span class="nav-text">for…in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for%E2%80%A6of"><span class="nav-number">4.</span> <span class="nav-text">for…of</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiBK"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">LiBK</p>
+  <div class="site-description" itemprop="description">当勤精进 &nbsp;&nbsp;&nbsp;如救头燃但念无常 &nbsp;&nbsp;&nbsp;慎勿放逸</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/libk" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;libk" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mrlibk@outlook.com" title="E-Mail → mailto:mrlibk@outlook.com" rel="noopener" target="_blank"><i class="fas fa-envelope-square fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E5%9F%BA%E7%A1%80/JavaScript%E8%BF%AD%E4%BB%A3%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="LiBK">
+      <meta itemprop="description" content="当勤精进 &nbsp;&nbsp;&nbsp;如救头燃但念无常 &nbsp;&nbsp;&nbsp;慎勿放逸">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiBK-铁甲依然在">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript迭代操作总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-30 21:22:42" itemprop="dateCreated datePublished" datetime="2021-12-30T21:22:42+08:00">2021-12-30</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-03-30 21:32:41" itemprop="dateModified" datetime="2022-03-30T21:32:41+08:00">2022-03-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="普通for循环"><a href="#普通for循环" class="headerlink" title="普通for循环"></a>普通for循环</h2><p>优点：没有任何额外的函数调用栈和上下文，在大数据量的情况下，性能更好</p>
+<p>缺点：需要额外维护变量i和迭代边界</p>
+<h2 id="forEach方法"><a href="#forEach方法" class="headerlink" title="forEach方法"></a>forEach方法</h2><p><code>forEach()</code> 方法按升序为数组中含有效值的每一项执行一次 <code>callback</code> 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）。</p>
+<p>可依次向 <code>callback</code> 函数传入三个参数：</p>
+<ol>
+<li>数组当前项的值</li>
+<li>数组当前项的索引</li>
+<li>数组对象本身</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>只能用来对数组进行迭代操作</li>
+<li>除了抛出异常以外，没有办法中止或跳出 <code>forEach()</code>循环</li>
+</ol>
+<h2 id="for…in"><a href="#for…in" class="headerlink" title="for…in"></a>for…in</h2><p><code>for...in</code>语句以任意顺序迭代一个对象的除Symbol以外的<strong>可枚举属性</strong>，包括继承的可枚举属性。有三个要注意的点：</p>
+<ol>
+<li><p>只能访问到除<code>symbol</code>以外的可枚举属性。</p>
+<p>JavaScript中基本包装类型的原型属性是不可枚举的，如Object, Array, Number等，或者属性的<code>enumerable</code>属性被设置为false，这些属性都不能被for…in访问到。可以使用<code>Object.getOwnPropertyDescriptor(targetObj, attrName)</code>方法来查看对象的某个属性是否可枚举</p>
+</li>
+<li><p>非基本包装类型的原型上的属性和手动添加的其他属性，如果是可枚举的，都可以被遍历到。</p>
+<p>如果你只要考虑对象本身的属性，而不是它的原型，那么使用 <code>getOwnPropertyNames()</code>或执行 <code>hasOwnProperty()</code>来确定某属性是否是对象本身的属性</p>
+</li>
+<li><p>迭代的顺序并不一定会按照键名的书写顺序，所以for…in不应该用于迭代一个关注索引顺序的数据结构，更适合遍历对象。背后的执行机制可以看这一篇<a target="_blank" rel="noopener" href="https://www.notion.so/libk/for-in-Object-keys-b96ef9a18c6f4d25866bb284e32b7de0">https://www.notion.so/libk/for-in-Object-keys-b96ef9a18c6f4d25866bb284e32b7de0</a></p>
+</li>
+<li><p>支持<code>break/continue</code>的操作</p>
+</li>
+</ol>
+<h2 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h2><p><code>for...of</code>语句在<strong>可迭代对象</strong>（包括 <code>Array</code>，<code>Map</code>，<code>Set</code>，<code>String</code>，<code>TypedArray</code>，<code>arguments</code>对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句。</p>
+<p>需要注意的是，<code>for...of</code>是依靠对象的迭代器工作的，也就是该对象必须部署<code>Symbol.iterator</code>属性，而普通的对象并没有<code>iterator</code>接口，所以不能使用<code>for...of</code>迭代普通对象。可以通过给普通对象实现<code>Symbol.iterator</code>接口的方式来让普通对象变得可迭代。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> father = &#123;</span><br><span class="line">        *[<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Reflect</span>.ownKeys(<span class="built_in">this</span>)) &#123;</span><br><span class="line">                <span class="keyword">yield</span> key;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> obj = <span class="built_in">Object</span>.create(father);</span><br><span class="line"></span><br><span class="line">    obj.a = <span class="number">1</span>;</span><br><span class="line">    obj[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    obj[<span class="built_in">Symbol</span>(<span class="string">&#x27;PaperCrane&#x27;</span>)] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(obj, <span class="string">&#x27;b&#x27;</span>, &#123;</span><br><span class="line">        <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">value</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">enumerable</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">configurable</span>: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> obj) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 0</span></span><br><span class="line">    <span class="comment">// a</span></span><br><span class="line">    <span class="comment">// b</span></span><br><span class="line">    <span class="comment">// Symbol(PaperCrane)</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>LiBK
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://libk.github.io/%E5%9F%BA%E7%A1%80/JavaScript%E8%BF%AD%E4%BB%A3%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" title="JavaScript迭代操作总结">http://libk.github.io/基础/JavaScript迭代操作总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/JavaScript%E4%B8%8EC%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83/" rel="prev" title="JavaScript与C语言参数传递方式的比较">
+                  <i class="fa fa-chevron-left"></i> JavaScript与C语言参数传递方式的比较
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/%E5%9F%BA%E7%A1%80/for-in%E5%92%8CObject-keys%E8%BF%AD%E4%BB%A3%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90/" rel="next" title="for...in和Object.keys迭代顺序的深入分析">
+                  for...in和Object.keys迭代顺序的深入分析 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiBK</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
