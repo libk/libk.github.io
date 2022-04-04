@@ -20,28 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="for in：可获取原型的属性，不可获取不可枚举属性 for of：只能获取可迭代对象的属性 Object.keys：原型属性和不可枚举属性都不能获取 JSON.stringify：原型属性和不可枚举属性都不能获取 Object.getOwnPropertyByNames：不可获取原型属性，可获取不可枚举属性  以上都不可获取Symbol属性  Object.getOwnPropertySymb">
+<meta name="description" content="问题描述给定一个整数数组，给定一个值K，这个值在原数组中一定存在，要求把数组中小于K的元素放到数组的左边，大于K的元素放到数组的右边，等于K的元素放到数组的中间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="属性获取方法总结">
-<meta property="og:url" content="http://libk.github.io/%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">
+<meta property="og:title" content="荷兰国旗问题">
+<meta property="og:url" content="http://libk.github.io/%E7%AE%97%E6%B3%95/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98/">
 <meta property="og:site_name" content="LiBK-铁甲依然在">
-<meta property="og:description" content="for in：可获取原型的属性，不可获取不可枚举属性 for of：只能获取可迭代对象的属性 Object.keys：原型属性和不可枚举属性都不能获取 JSON.stringify：原型属性和不可枚举属性都不能获取 Object.getOwnPropertyByNames：不可获取原型属性，可获取不可枚举属性  以上都不可获取Symbol属性  Object.getOwnPropertySymb">
+<meta property="og:description" content="问题描述给定一个整数数组，给定一个值K，这个值在原数组中一定存在，要求把数组中小于K的元素放到数组的左边，大于K的元素放到数组的右边，等于K的元素放到数组的中间">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-30T14:08:10.000Z">
-<meta property="article:modified_time" content="2022-03-30T14:08:54.944Z">
+<meta property="article:published_time" content="2018-08-25T13:14:02.000Z">
+<meta property="article:modified_time" content="2022-04-01T17:17:03.595Z">
 <meta property="article:author" content="LiBK">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="基本算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://libk.github.io/%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">
+<link rel="canonical" href="http://libk.github.io/%E7%AE%97%E6%B3%95/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/","path":"基础/属性获取方法总结/","title":"属性获取方法总结"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E7%AE%97%E6%B3%95/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98/","path":"算法/荷兰国旗问题/","title":"荷兰国旗问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>属性获取方法总结 | LiBK-铁甲依然在</title>
+<title>荷兰国旗问题 | LiBK-铁甲依然在</title>
   
 
 
@@ -107,7 +107,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -120,6 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -136,20 +137,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -201,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E7%AE%97%E6%B3%95/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          属性获取方法总结
+          荷兰国旗问题
         </h1>
 
         <div class="post-meta-container">
@@ -225,22 +226,15 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-12-30 22:08:10" itemprop="dateCreated datePublished" datetime="2021-12-30T22:08:10+08:00">2021-12-30</time>
+      <time title="创建时间：2018-08-25 21:14:02" itemprop="dateCreated datePublished" datetime="2018-08-25T21:14:02+08:00">2018-08-25</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-03-30 22:08:54" itemprop="dateModified" datetime="2022-03-30T22:08:54+08:00">2022-03-30</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
         </span>
     </span>
 
@@ -254,18 +248,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <ol>
-<li>for in：可获取原型的属性，不可获取不可枚举属性</li>
-<li>for of：只能获取可迭代对象的属性</li>
-<li>Object.keys：原型属性和不可枚举属性都不能获取</li>
-<li>JSON.stringify：原型属性和不可枚举属性都不能获取</li>
-<li>Object.getOwnPropertyByNames：不可获取原型属性，可获取不可枚举属性</li>
-</ol>
-<p>以上都不可获取Symbol属性</p>
-<ol>
-<li>Object.getOwnPropertySymbols：可获取Symbol属性</li>
-<li>Reflect.ownKeys：可获取不可枚举属性和Symbol属性，不可获取原型</li>
-</ol>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>给定一个整数数组，给定一个值K，这个值在原数组中一定存在，要求把数组中小于K的元素放到数组的左边，大于K的元素放到数组的右边，等于K的元素放到数组的中间</p>
+<span id="more"></span>
+
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 荷兰国旗问题</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nethFlag</span> (<span class="params">arr, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> less = -<span class="number">1</span></span><br><span class="line">  <span class="keyword">let</span> greater = arr.length</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (i &lt; greater) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] &lt; num) &#123;</span><br><span class="line">      [arr[i], arr[less + <span class="number">1</span>]] = [arr[less + <span class="number">1</span>], arr[i]]</span><br><span class="line">      i++</span><br><span class="line">      less++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[i] === num) &#123;</span><br><span class="line">      i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      [arr[i], arr[greater - <span class="number">1</span>]] = [arr[greater - <span class="number">1</span>], arr[i]]</span><br><span class="line">      greater--</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -283,7 +270,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://libk.github.io/%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="属性获取方法总结">http://libk.github.io/基础/属性获取方法总结/</a>
+      <a href="http://libk.github.io/%E7%AE%97%E6%B3%95/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98/" title="荷兰国旗问题">http://libk.github.io/算法/荷兰国旗问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -292,18 +279,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 基本算法</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/%E5%9F%BA%E7%A1%80/for-in%E5%92%8CObject-keys%E8%BF%AD%E4%BB%A3%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90/" rel="prev" title="for...in和Object.keys迭代顺序的深入分析">
-                  <i class="fa fa-chevron-left"></i> for...in和Object.keys迭代顺序的深入分析
+                <a href="/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" rel="prev" title="基本排序算法-归并排序">
+                  <i class="fa fa-chevron-left"></i> 基本排序算法-归并排序
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/JavaScript%E4%B8%8EC%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83/" rel="next" title="JavaScript与C语言参数传递方式的比较">
+                  JavaScript与C语言参数传递方式的比较 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
