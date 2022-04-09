@@ -1424,10 +1424,13 @@ pre code {
 }
 .site-description {
   color: #999;
-  font-size: 0.8125em;
+  font-size: 12px;
   margin-top: 0;
-  padding-left: 45px;
-  padding-right: 45px;
+  text-align: center;
+}
+.site-author {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .links-of-author a {
   font-size: 0.8125em;
