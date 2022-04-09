@@ -20,28 +20,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="问题描述Given a string s containing just the characters &#39;(&#39;, &#39;)&#39;, &#39;&amp;#123;&#39;, &#39;&amp;#125;&#39;, &#39;[&#39; and &#39;]&#39;, determine if the input string is valid. An input string i">
+<meta name="description" content="问题描述Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.) Ex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-20. Valid Parentheses">
-<meta property="og:url" content="http://libk.github.io/%E7%AE%97%E6%B3%95/leetcode-20-Valid-Parentheses/">
+<meta property="og:title" content="LeetCode-24. Swap Nodes in Pairs">
+<meta property="og:url" content="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-24-Swap-Nodes-in-Pairs/">
 <meta property="og:site_name" content="LiBK-铁甲依然在">
-<meta property="og:description" content="问题描述Given a string s containing just the characters &#39;(&#39;, &#39;)&#39;, &#39;&amp;#123;&#39;, &#39;&amp;#125;&#39;, &#39;[&#39; and &#39;]&#39;, determine if the input string is valid. An input string i">
+<meta property="og:description" content="问题描述Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.) Ex">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-04-01T14:34:42.000Z">
-<meta property="article:modified_time" content="2022-04-07T13:47:18.829Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg">
+<meta property="article:published_time" content="2022-04-08T14:36:12.000Z">
+<meta property="article:modified_time" content="2022-04-08T14:38:38.858Z">
 <meta property="article:author" content="LiBK">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg">
 
 
-<link rel="canonical" href="http://libk.github.io/%E7%AE%97%E6%B3%95/leetcode-20-Valid-Parentheses/">
+<link rel="canonical" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-24-Swap-Nodes-in-Pairs/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E7%AE%97%E6%B3%95/leetcode-20-Valid-Parentheses/","path":"算法/leetcode-20-Valid-Parentheses/","title":"LeetCode-20. Valid Parentheses"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-24-Swap-Nodes-in-Pairs/","path":"算法/LeetCode-24-Swap-Nodes-in-Pairs/","title":"LeetCode-24. Swap Nodes in Pairs"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LeetCode-20. Valid Parentheses | LiBK-铁甲依然在</title>
+<title>LeetCode-24. Swap Nodes in Pairs | LiBK-铁甲依然在</title>
   
 
 
@@ -204,7 +206,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E7%AE%97%E6%B3%95/leetcode-20-Valid-Parentheses/">
+    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-24-Swap-Nodes-in-Pairs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -217,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode-20. Valid Parentheses
+          LeetCode-24. Swap Nodes in Pairs
         </h1>
 
         <div class="post-meta-container">
@@ -228,7 +230,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-04-01 22:34:42" itemprop="dateCreated datePublished" datetime="2018-04-01T22:34:42+08:00">2018-04-01</time>
+      <time title="创建时间：2022-04-08 22:36:12" itemprop="dateCreated datePublished" datetime="2022-04-08T22:36:12+08:00">2022-04-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -250,20 +252,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;&#123;&#39;</code>, <code>&#39;&#125;&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
-<p>An input string is valid if:</p>
-<ol>
-<li>Open brackets must be closed by the same type of brackets.</li>
-<li>Open brackets must be closed in the correct order.</li>
-</ol>
-<p><strong>Constraints:</strong></p>
-<ul>
-<li><code>1 &lt;= s.length &lt;= 104</code></li>
-<li><code>s</code> consists of parentheses only <code>&#39;()[]&#123;&#125;&#39;</code>.</li>
-</ul>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.)</p>
+<p><strong>Example :</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [1,2,3,4]</span><br><span class="line">Output: [2,1,4,3]</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> isValid = <span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stack = []</span><br><span class="line">  <span class="keyword">let</span> dict = &#123;</span><br><span class="line">    <span class="string">&#x27;(&#x27;</span>: <span class="string">&#x27;)&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;[&#x27;</span>: <span class="string">&#x27;]&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;&#123;&#x27;</span>: <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (dict[s[i]] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      stack.push(dict(s[i]))</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s[i] !== stack.pop()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> stack.length === <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 24. Swap Nodes in Pairs</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val, next) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.next = (next===undefined ? null : next)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;ListNode&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> swapPairs = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (head === <span class="literal">null</span> || head.next === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> head</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> dummy = <span class="keyword">new</span> ListNode()</span><br><span class="line">  dummy.next = head</span><br><span class="line">  <span class="keyword">let</span> pre = dummy</span><br><span class="line">  <span class="keyword">let</span> cur = head</span><br><span class="line">  <span class="keyword">while</span> (cur !== <span class="literal">null</span> &amp;&amp; cur.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> temp = cur.next</span><br><span class="line">    cur.next = temp.next</span><br><span class="line">    temp.next = pre.next</span><br><span class="line">    pre.next = temp</span><br><span class="line">    pre = cur</span><br><span class="line">    cur = cur.next</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dummy.next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -282,7 +278,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://libk.github.io/%E7%AE%97%E6%B3%95/leetcode-20-Valid-Parentheses/" title="LeetCode-20. Valid Parentheses">http://libk.github.io/算法/leetcode-20-Valid-Parentheses/</a>
+      <a href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-24-Swap-Nodes-in-Pairs/" title="LeetCode-24. Swap Nodes in Pairs">http://libk.github.io/算法/LeetCode-24-Swap-Nodes-in-Pairs/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -298,14 +294,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="属性获取方法总结">
-                  <i class="fa fa-chevron-left"></i> 属性获取方法总结
+                <a href="/%E7%AE%97%E6%B3%95/LeetCode-445-Add-Two-Numbers-II/" rel="prev" title="LeetCode-445. Add Two Numbers II">
+                  <i class="fa fa-chevron-left"></i> LeetCode-445. Add Two Numbers II
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/%E7%AE%97%E6%B3%95/leetcode-1-Two-Sum/" rel="next" title="LeetCode-1. Two Sum">
-                  LeetCode-1. Two Sum <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
