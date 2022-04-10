@@ -28,7 +28,7 @@
 <meta property="og:description" content="插入排序特点：  所需时间受输入元素初始顺序的影响 如果数据是局部有序的，那么用插入排序会很高效。 也很适合小规模数组，在V8引擎里调用Array.prototype.sort()时，当数组长度大于10个的情况下，采用的是快速排序，而当长度小于等于10个时则切换为插入排序，以提高运算效率。  123456789101112131415161718&#x2F;* * @Description: insertS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-08-23T16:30:17.000Z">
-<meta property="article:modified_time" content="2022-04-02T16:46:48.408Z">
+<meta property="article:modified_time" content="2022-04-09T12:38:04.910Z">
 <meta property="article:author" content="LiBK">
 <meta property="article:tag" content="基本算法">
 <meta name="twitter:card" content="summary">
@@ -116,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">3.</span> <span class="nav-text">冒泡排序</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">3.</span> <span class="nav-text">冒泡排序</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -246,7 +246,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>特点：</p>
+        <h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>特点：</p>
 <ol>
 <li>所需时间受输入元素初始顺序的影响</li>
 <li>如果数据是局部有序的，那么用插入排序会很高效。</li>
@@ -256,14 +256,14 @@
 
 <span id="more"></span>
 
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>特点：</p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>特点：</p>
 <ol>
 <li>运行时间和输入数据的特征无关，只与数据的规模有关</li>
 <li>数据移动是最少的，只有N次数据交换。</li>
 </ol>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: selectionSort </span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (arr === <span class="literal">null</span> || arr === <span class="literal">undefined</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> min = i</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[min] &gt; arr[j]) &#123;</span><br><span class="line">        min = j</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (min !== i) &#123;</span><br><span class="line">      [arr[i], arr[min]] = [arr[min], arr[i]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: bubbleSort</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (arr === <span class="literal">null</span> || arr === <span class="literal">undefined</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = arr.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        [arr[j], arr[j + <span class="number">1</span>]] = [arr[j + <span class="number">1</span>], arr[j]]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: bubbleSort</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (arr === <span class="literal">null</span> || arr === <span class="literal">undefined</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = arr.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        [arr[j], arr[j + <span class="number">1</span>]] = [arr[j + <span class="number">1</span>], arr[j]]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
