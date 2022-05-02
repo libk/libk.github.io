@@ -20,30 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="问题描述Given the root of a binary tree, return the zigzag level order traversal of its nodes’ values. (i.e., from left to right, then right to left for the next level and alternate between). Example :  1">
+    <meta name="description" content="问题描述Given an m x n 2D binary grid grid which represents a map of &#39;1&#39;s (land) and &#39;0&#39;s (water), return the number of islands. An island is surrounded by water and is formed by connectin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-103. Binary Tree Zigzag Level Order Traversal">
-<meta property="og:url" content="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/">
+<meta property="og:title" content="LeetCode-200. Number of Islands">
+<meta property="og:url" content="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-200-Number-of-Islands/">
 <meta property="og:site_name" content="LiBK-铁甲依然在">
-<meta property="og:description" content="问题描述Given the root of a binary tree, return the zigzag level order traversal of its nodes’ values. (i.e., from left to right, then right to left for the next level and alternate between). Example :  1">
+<meta property="og:description" content="问题描述Given an m x n 2D binary grid grid which represents a map of &#39;1&#39;s (land) and &#39;0&#39;s (water), return the number of islands. An island is surrounded by water and is formed by connectin">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg">
-<meta property="article:published_time" content="2018-04-14T15:18:43.000Z">
-<meta property="article:modified_time" content="2022-04-14T17:25:59.529Z">
+<meta property="article:published_time" content="2018-05-01T14:45:43.000Z">
+<meta property="article:modified_time" content="2022-05-02T05:16:39.861Z">
 <meta property="article:author" content="LiBK">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg">
 
 
-<link rel="canonical" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/">
+<link rel="canonical" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-200-Number-of-Islands/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/","path":"算法/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/","title":"LeetCode-103. Binary Tree Zigzag Level Order Traversal"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-200-Number-of-Islands/","path":"算法/LeetCode-200-Number-of-Islands/","title":"LeetCode-200. Number of Islands"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LeetCode-103. Binary Tree Zigzag Level Order Traversal | LiBK-铁甲依然在</title>
+<title>LeetCode-200. Number of Islands | LiBK-铁甲依然在</title>
   
 
 
@@ -197,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/">
+    <link itemprop="mainEntityOfPage" href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-200-Number-of-Islands/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -210,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LeetCode-103. Binary Tree Zigzag Level Order Traversal | LiBK-铁甲依然在">
+      <meta itemprop="name" content="LeetCode-200. Number of Islands | LiBK-铁甲依然在">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode-103. Binary Tree Zigzag Level Order Traversal
+          LeetCode-200. Number of Islands
         </h1>
 
         <div class="post-meta-container">
@@ -226,7 +224,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-04-14 23:18:43" itemprop="dateCreated datePublished" datetime="2018-04-14T23:18:43+08:00">2018-04-14</time>
+      <time title="创建时间：2018-05-01 22:45:43" itemprop="dateCreated datePublished" datetime="2018-05-01T22:45:43+08:00">2018-05-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,14 +246,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>Given the <code>root</code> of a binary tree, return <em>the zigzag level order traversal of its nodes’ values</em>. (i.e., from left to right, then right to left for the next level and alternate between).</p>
-<p><strong>Example :</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [3,9,20,null,null,15,7]</span><br><span class="line">Output: [[3],[20,9],[15,7]]</span><br></pre></td></tr></table></figure>
+        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>Given an <code>m x n</code> 2D binary grid <code>grid</code> which represents a map of <code>&#39;1&#39;</code>s (land) and <code>&#39;0&#39;</code>s (water), return <em>the number of islands</em>.</p>
+<p>An <strong>island</strong> is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: grid = [</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;]</span><br><span class="line">]</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure>
 
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: grid = [</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;]</span><br><span class="line">]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure>
+
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 300</code></li>
+<li><code>grid[i][j]</code> is <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
+</ul>
 <span id="more"></span>
 
-<h4 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 103. Binary Tree Zigzag Level Order Traversal</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> zigzagLevelOrder = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">    <span class="keyword">return</span> []</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> queue = [root]</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  <span class="keyword">let</span> leftToRight = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (queue.length) &#123;</span><br><span class="line">    <span class="keyword">let</span> curLength = queue.length</span><br><span class="line">    <span class="keyword">let</span> curLevel = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; curLength; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> cur = queue.shift()</span><br><span class="line">      <span class="keyword">if</span>(leftToRight) &#123;</span><br><span class="line">        curLevel.push(cur.val)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        curLevel.unshift(cur.val)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur.left) &#123;</span><br><span class="line">        queue.push(cur.left)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur.right) &#123;</span><br><span class="line">        queue.push(cur.right)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    leftToRight = !leftToRight</span><br><span class="line">    res.push(curLevel)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 200. Number of Islands</span></span><br><span class="line"><span class="comment"> * @Author: libk</span></span><br><span class="line"><span class="comment"> * @Github: https://github.com/libk</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">grid</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> numIslands = <span class="function"><span class="keyword">function</span> (<span class="params">grid</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (grid === <span class="literal">null</span> || grid.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">  <span class="keyword">const</span> row = grid.length</span><br><span class="line">  <span class="keyword">const</span> col = grid[<span class="number">0</span>].length</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> dfs = <span class="function">(<span class="params">grid, i, j</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt; row - <span class="number">1</span> || j &lt; <span class="number">0</span> || j &gt; col - <span class="number">1</span> || grid[i][j] !== <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    grid[i][j] = <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    dfs(grid, i - <span class="number">1</span>, j)</span><br><span class="line">    dfs(grid, i + <span class="number">1</span>, j)</span><br><span class="line">    dfs(grid, i, j - <span class="number">1</span>)</span><br><span class="line">    dfs(grid, i, j + <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (grid[i][j] === <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">        count++</span><br><span class="line">        dfs(grid, i, j)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -274,7 +282,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/" title="LeetCode-103. Binary Tree Zigzag Level Order Traversal">http://libk.github.io/算法/LeetCode-103-Binary-Tree-Zigzag-Level-Order-Traversal/</a>
+      <a href="http://libk.github.io/%E7%AE%97%E6%B3%95/LeetCode-200-Number-of-Islands/" title="LeetCode-200. Number of Islands">http://libk.github.io/算法/LeetCode-200-Number-of-Islands/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -290,13 +298,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/%E7%AE%97%E6%B3%95/LeetCode-102-Binary-Tree-Level-Order-Traversal/" rel="prev" title="LeetCode-102. Binary Tree Level Order Traversal">
-                  <i class="fa fa-chevron-left"></i> LeetCode-102. Binary Tree Level Order Traversal
+                <a href="/%E7%AE%97%E6%B3%95/LeetCode-15-3Sum/" rel="prev" title="LeetCode-15. 3Sum">
+                  <i class="fa fa-chevron-left"></i> LeetCode-15. 3Sum
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/%E7%AE%97%E6%B3%95/LeetCode-104-Maximum-Depth-of-Binary-Tree/" rel="next" title="LeetCode-104. Maximum Depth of Binary Tree">
-                  LeetCode-104. Maximum Depth of Binary Tree <i class="fa fa-chevron-right"></i>
+                <a href="/%E7%AE%97%E6%B3%95/LeetCode-695-Max-Area-of-Island/" rel="next" title="LeetCode-695. Max Area of Island">
+                  LeetCode-695. Max Area of Island <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
