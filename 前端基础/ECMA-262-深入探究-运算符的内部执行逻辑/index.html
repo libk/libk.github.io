@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"libk.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="犀牛书3.91节中提到”一个值可以转换为另一个值，并不意味着这两个值是相等的“，比如undefined用在期待布尔值的地方，可以被转换成布尔值false，但undefined !&#x3D;&#x3D; false。 JavaScript中的&#x3D;&#x3D;运算符会涉及到一系列的隐式类型转换，有时候运行的结果会让初学者困惑。下面参考ECMA-262对&#x3D;&#x3D;运算的内部执行逻辑进行分析。 表达式x &#x3D;&#x3D; y，返回的结果为true或者f">
 <meta property="og:type" content="article">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="犀牛书3.91节中提到”一个值可以转换为另一个值，并不意味着这两个值是相等的“，比如undefined用在期待布尔值的地方，可以被转换成布尔值false，但undefined !&#x3D;&#x3D; false。 JavaScript中的&#x3D;&#x3D;运算符会涉及到一系列的隐式类型转换，有时候运行的结果会让初学者困惑。下面参考ECMA-262对&#x3D;&#x3D;运算的内部执行逻辑进行分析。 表达式x &#x3D;&#x3D; y，返回的结果为true或者f">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-13T14:29:29.000Z">
-<meta property="article:modified_time" content="2022-04-13T14:00:03.012Z">
+<meta property="article:modified_time" content="2022-05-19T16:59:34.925Z">
 <meta property="article:author" content="LiBK">
 <meta property="article:tag" content="ECMA-262">
 <meta property="article:tag" content="JavaScript">
@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-count">90</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -261,6 +261,8 @@
 <li>否则，返回false。</li>
 </ol>
 <p>上述的执行逻辑有几点需要着重注意：</p>
+<span id="more"></span>
+
 <ol>
 <li>只要遇到Boolean类型，就直接调用ToNumber转将布尔值为数字类型。</li>
 <li>上述逻辑中没有涉及到的，都返回false，这其中就包括<code>null == 0</code>和<code>undefined == 0</code>，这两个表达式的结果都为false，并且任意两个不同的Object类型，都不相等。</li>
